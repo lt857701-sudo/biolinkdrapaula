@@ -500,6 +500,11 @@ h1 em { color: #FFF0D9; }
 }
 .whatsapp-cta,
 .bio-links { width: 100%; }
+.whatsapp-cta,
+.bio-links {
+  position: relative;
+  left: 14px;
+}
 .whatsapp-cta {
   min-height: 44px;
   gap: 6px;
