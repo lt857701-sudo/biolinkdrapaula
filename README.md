@@ -1,21 +1,36 @@
 # Link da bio — Dra. Paula Pádua
 
-Projeto de link da bio em **formato exclusivamente mobile**. A composição permanece em uma única coluna com largura máxima de 430 px também quando visualizada em computador; não existe layout desktop de site.
+Página estática de link da bio em formato mobile fixo, feita com HTML, CSS e JavaScript puro. A composição permanece em uma única coluna com largura máxima de 430 px, inclusive quando visualizada em computador; não há um layout de site desktop.
 
 ## Arquivos
 
-- `index.html` — estrutura da bio.
-- `styles.css` — composição vertical, tipografia e estilos.
-- `app.js` — comportamento dos links e aviso quando um destino ainda não foi configurado.
-- `links.js` — destinos oficiais editáveis.
-- `assets/dra-paula-hero.webp` — fotografia otimizada da doutora.
+- `index.html` — estrutura e conteúdo da bio.
+- `styles.css` — enquadramento da foto, composição e estilos.
+- `app.js` — ativa os destinos configurados ou mostra um aviso quando faltam endereços.
+- `links.js` — endereços oficiais editáveis.
+- `assets/dra-paula-hero.jpg` — foto atualmente usada pela página.
+- `assets/dra-paula-hero.webp` — outra imagem incluída no repositório, não usada pela página atual.
 
-## Configurar endereços
+## Configurar os links antes de publicar
 
-Preencha os endereços verdadeiros em `links.js`. O WhatsApp deve usar o formato `https://wa.me/55DDDNUMERO`, somente com números. Os quatro destinos podem ser URLs HTTPS existentes.
+Preencha os cinco destinos oficiais em `links.js`: `whatsapp`, `method`, `results`, `studies` e `talks`. Use URLs HTTPS. Para o WhatsApp, use o formato `https://wa.me/55DDDNUMERO`, somente com números.
 
-Nenhum telefone ou endereço foi inventado. Enquanto o campo estiver vazio, o toque mostra uma mensagem explicando qual destino falta configurar.
+No estado atual, esses cinco valores estão vazios. A página não inventa destinos: ao tocar nos botões sem configuração, mostra um aviso informando o que falta. Preencha e teste os endereços antes de divulgar a URL de produção.
+
+## Deploy na Vercel
+
+O projeto é servido diretamente como site estático; não usa `package.json`, dependências, etapa de build ou funções serverless. Não é necessário adicionar `vercel.json` nem regras de rewrite. Os caminhos para CSS, scripts e imagens são relativos à raiz do projeto.
+
+Ao importar `lt857701-sudo/biolinkdrapaula` na Vercel, use a raiz do repositório como **Root Directory**, selecione **Other** como framework e deixe a **Build Command** substituída e vazia para não executar um build. Como não existe pasta `public`, a saída estática deve apontar para `.` (raiz do projeto). Não configure `dist` ou `public` como diretório de saída.
+
+Consulte a [documentação da Vercel sobre configuração de build](https://vercel.com/docs/builds/configure-a-build) para os detalhes da opção **Other** e projetos sem build.
 
 ## Testar localmente
 
-Abra `index.html` ou sirva a pasta com `python -m http.server 8000` e acesse `http://localhost:8000`.
+Na raiz do projeto, execute:
+
+```bash
+python3 -m http.server 8000
+```
+
+Acesse `http://localhost:8000`.
