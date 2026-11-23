@@ -13,9 +13,9 @@ Página estática de link da bio em formato mobile fixo, feita com HTML, CSS e J
 
 ## Configurar os links antes de publicar
 
-Preencha os cinco destinos oficiais em `links.js`: `whatsapp`, `method`, `results`, `studies` e `talks`. Use URLs HTTPS. Para o WhatsApp, use o formato `https://wa.me/55DDDNUMERO`, somente com números.
+Os cinco destinos oficiais estão preenchidos em `links.js`: `whatsapp`, `method`, `results`, `studies` e `talks`. O WhatsApp abre com a mensagem de avaliação pré-preenchida. Os botões externos abrem em nova aba; para trocar um endereço, mantenha o protocolo HTTPS.
 
-No estado atual, esses cinco valores estão vazios. A página não inventa destinos: ao tocar nos botões sem configuração, mostra um aviso informando o que falta. Preencha e teste os endereços antes de divulgar a URL de produção.
+`app.js` valida que os endereços comecem com `https://` e define `rel="noopener noreferrer"` ao abrir uma nova aba. Se algum valor voltar a ficar vazio ou inválido, o botão mostra um aviso em vez de navegar.
 
 ## Deploy na Vercel
 
